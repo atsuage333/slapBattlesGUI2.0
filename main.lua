@@ -37,7 +37,7 @@ CombatTab:AddToggle({
 	end    
 })
 
-local PLayerTab = Window:MakeTab({
+local PlayerTab = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
