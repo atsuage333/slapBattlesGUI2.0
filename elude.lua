@@ -17,7 +17,7 @@ HomeTab:AddButton({
 HomeTab:AddButton({
 	Name = "Get elude",
 	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Ruins.Elude.CFrame * CFrame.new(0,1.5,0) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(0))
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Ruins.Elude.Glove.CFrame * CFrame.new(0,1.5,0) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(0))
   	end    
 })
 
