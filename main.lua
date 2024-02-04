@@ -20,13 +20,17 @@ local CombatTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-CombatTab:AddToggle({
-	Name = "Rythm Spam",
-	Default = false,
-	Callback = function(Value)
-		print(Value)
-	end    
-})
+ CombatTab:AddToggle({
+                    Name = "Rhythm Spam",
+                    Default = false,
+                    Callback = function(Value)
+RhythmSpam = Value
+while RhythmSpam do
+game:GetService("ReplicatedStorage").rhythmevent:FireServer("AoeExplosion",0)
+task.wait()
+end
+                    end    
+                })
 
 CombatTab:AddToggle({
                     Name = "Auto Enter Arena",
