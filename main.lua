@@ -198,25 +198,6 @@ end
 })
 
 AntiTab:AddToggle({
-                    Name = "Anti Portal",
-                    Default = false,
-                    Callback = function(Value)
-AntiPortal = Value
-if AntiPortal == true then
-workspace.Lobby.Teleport2.CanTouch = false
-workspace.Lobby.Teleport3.CanTouch = false
-workspace.Lobby.Teleport4.CanTouch = false
-workspace.Lobby.Teleport6.CanTouch = false
-else
-workspace.Lobby.Teleport2.CanTouch = true
-workspace.Lobby.Teleport3.CanTouch = true
-workspace.Lobby.Teleport4.CanTouch = true
-workspace.Lobby.Teleport6.CanTouch = true
-end
-end
-})
-
-AntiTab:AddToggle({
                     Name = "Anti Ragdoll (This will reset your character)",
                     Default = false,
                     Callback = function(Value)
@@ -277,22 +258,6 @@ end
                 })
 
 AntiTab:AddToggle({
-                    Name = "Anti Brazil",
-                    Default = false,
-                    Callback = function(Value)
-if Value == true then
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
-                        v.CanTouch = false
-                end
-else
-for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
-                        v.CanTouch = true
-                end
-end
-                    end    
-                })
-
-AntiTab:AddToggle({
                     Name = "Anti Cube of Death",
                     Default = false,
                     Callback = function(Value)
@@ -331,14 +296,6 @@ BadgeTab:AddButton({
 	Callback = function()
 		game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
-  	end    
-})
-
-BadgeTab:AddButton({
-	Name = "Go Admin",
-	Callback = function()
-	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
   	end    
 })
 
