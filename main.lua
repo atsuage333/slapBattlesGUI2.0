@@ -1963,6 +1963,14 @@ game:GetService("TeleportService"):Teleport(6403373529)
 })
 
 Tab3:AddButton({
+	Name = "Get Retro",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-502.336, 14.228, -179.597)
+game:GetService("TeleportService"):Teleport(6403373529)
+  	end    
+})
+	
+Tab3:AddButton({
 	Name = "Get retro",
 	Callback = function()
 fireclickdetector(game.Workspace.CounterLever.ClickDetector)
