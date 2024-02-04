@@ -10,10 +10,28 @@ local HomeTab = Window:MakeTab({
 HomeTab:AddButton({
 	Name = "Safe spot TP",
 	Callback = function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10015.716796875, -42.00001525878906, 9990.03515625)
+        local SafeSpot = Instance.new("Part", workspace)
+        SafeSpot.Position = Vector3.new(96, -12144, 77)
+        SafeSpot.Name = "SafeSpot"
+        SafeSpot.Size = Vector3.new(5000, 50, 5000)
+        SafeSpot.Anchored = true
+        SafeSpot.Transparency = 0
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(96.18177795410156, -12116.0029296875, 66.97261047363281)
   	end    
 })
 
+HomeTab:AddToggle({
+	Name = "Anti AFK",
+	Default = false,
+	Callback = function(Value)
+		local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(1)
+vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+	end    
+})
 
 HomeTab:AddButton({
 	Name = "Destroy Gui",
