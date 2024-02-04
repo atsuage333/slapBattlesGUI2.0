@@ -40,6 +40,7 @@ ab.Text="Roblox tried kicking you buy I didnt let them!"wait(2)ab.Text="Status :
 	end    
 })
 
+OrionLib:Init()
 --[[
 Name = <string> - The name of the toggle.
 Default = <bool> - The default value of the toggle.
