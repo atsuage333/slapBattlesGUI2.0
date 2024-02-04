@@ -1272,6 +1272,22 @@ game:GetService("TeleportService"):Teleport(11828384869)
   	end    
 })
 
+Tab5:AddButton({
+                    Name = "Auto Enter Arena",
+                    Default = false,
+                    Callback = function(Value)
+AutoEnterArena = Value
+while AutoEnterArena do
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 1)
+    end
+task.wait()
+end
+end
+                })
+
+	
 Tab5:AddLabel("When in the elude maze there is a counter feature")
 
 Tab5:AddButton({
