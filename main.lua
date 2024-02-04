@@ -123,42 +123,12 @@ local AntiTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab3:AddToggle({
+AntiTab:AddToggle({
                     Name = "Anti Void (Works in tournament)",
                     Default = false,
                     Callback = function(Value)
 game.Workspace.dedBarrier.CanCollide = Value
 game.Workspace.TAntiVoid.CanCollide = Value
-                    end    
-                })
-
-ADB = Tab3:AddToggle({
-                    Name = "Anti Death Barriers",
-                    Default = false,
-                    Callback = function(Value)
-if Value == true then
-for i,v in pairs(game.Workspace.DEATHBARRIER:GetChildren()) do
-                    if v.ClassName == "Part" and v.Name == "BLOCK" then
-                        v.CanTouch = false
-                    end
-                end
-workspace.DEATHBARRIER.CanTouch = false
-workspace.DEATHBARRIER2.CanTouch = false
-workspace.dedBarrier.CanTouch = false
-workspace.ArenaBarrier.CanTouch = false
-workspace.AntiDefaultArena.CanTouch = false
-else
-for i,v in pairs(game.Workspace.DEATHBARRIER:GetChildren()) do
-                    if v.ClassName == "Part" and v.Name == "BLOCK" then
-                        v.CanTouch = true
-                    end
-                end
-workspace.DEATHBARRIER.CanTouch = true
-workspace.DEATHBARRIER2.CanTouch = true
-workspace.dedBarrier.CanTouch = true
-workspace.ArenaBarrier.CanTouch = true
-workspace.AntiDefaultArena.CanTouch = true
-end
                     end    
                 })
 
