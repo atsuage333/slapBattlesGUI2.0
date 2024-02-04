@@ -8,6 +8,14 @@ local HomeTab = Window:MakeTab({
 })
 
 HomeTab:AddButton({
+	Name = "Safe spot TP",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10015.716796875, -42.00001525878906, 9990.03515625)
+  	end    
+})
+
+
+HomeTab:AddButton({
 	Name = "Destroy Gui",
 	Callback = function()
 	      OrionLib:Destroy()
@@ -255,6 +263,33 @@ end
 game:GetService("TeleportService"):Teleport(11828384869)
   	end    
 })
+
+BadgeTab:AddButton({
+	Name = "Fast Brick farm",
+	Callback = function()
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick" then
+for i = 1, 200 do
+game:GetService("ReplicatedStorage").lbrick:FireServer()
+game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text = game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text + 1;
+wait(Random.new():NextNumber(1.5,1.75))
+game:GetService("ReplicatedStorage").lbrick:FireServer()
+game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text = game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text + 1;
+wait(Random.new():NextNumber(1.5,1.75))
+game:GetService("ReplicatedStorage").lbrick:FireServer()
+game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text = game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text + 1;
+wait(Random.new():NextNumber(1.5,1.75))
+game:GetService("ReplicatedStorage").lbrick:FireServer()
+game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text = game.Players.LocalPlayer.PlayerGui.BRICKCOUNT.ImageLabel.TextLabel.Text + 1;
+wait(Random.new():NextNumber(1.5,1.75))
+game:GetService('VirtualInputManager'):SendKeyEvent(true,'E',false,x)
+wait(Random.new():NextNumber(1.5,1.75))
+end
+else
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Brick equipped.",Image = "rbxassetid://7733658504",Time = 5})
+end
+                    end    
+                })
+
 
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
