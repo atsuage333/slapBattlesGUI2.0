@@ -10,7 +10,7 @@ local HomeTab = Window:MakeTab({
 HomeTab:AddButton({
 	Name = "Go to Retro obby",
 	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
+      		print("dadsdadwa")
   	end    
 })	
 
