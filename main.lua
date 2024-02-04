@@ -16,5 +16,3 @@ HomeTab:AddButton({
 
 end	
 OrionLib:Init()
-
-local player = game.Players.LocalPlayer
