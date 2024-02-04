@@ -63,4 +63,13 @@ HomeTab:AddButton({
   	end    
 })
 
+HelpTab:AddButton({
+	Name = "Help",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-59.6718216, 6.52948904, -45.6030807, -0.0210828781, -0.0116775334, 0.999709547, -0.002015037, 0.999930263, 0.011637616, -0.999775708, -0.00176909752, -0.0211049318)
+  	end    
+})
+
+HelpTab:AddLabel("After lowering the lever, wait in the safe spot for 3 minutes. Then teleport to the counter, which is located at one of the four. It's random every time. Once you find it, click on it to get a counter.")
+
 OrionLib:Init()
