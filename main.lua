@@ -20,17 +20,6 @@ local CombatTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-CombatTab:AddButton({
-	Name = "Inf 250 power (Needs 2 True Powers) (Use before other items)",
-	Callback = function()
-for i = 1, 2 do
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["True Power"])
-game.Players.LocalPlayer.Character["True Power"]:Activate()
-end
-                    end    	
-                })
-
-
 CombatTab:AddToggle({
 	Name = "Rythm Spam",
 	Default = false,
@@ -38,6 +27,43 @@ CombatTab:AddToggle({
 		print(Value)
 	end    
 })
+
+CombatTab:AddToggle({
+                    Name = "Glove ESP",
+                    Default = false,
+                    Callback = function(Value)
+GloveESP = Value
+if GloveESP == false then
+for i, v in ipairs(game.Players:GetChildren()) do
+                if v.Character and v.Character:FindFirstChild("Head") and v.Character.Head:FindFirstChild("GloveEsp") then
+ v.Character.Head.GloveEsp:Destroy()
+                end
+            end
+end
+while GloveESP do
+for i, v in ipairs(game.Players:GetChildren()) do
+                if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Head") and v.Character.inMatch.Value == true and v.Character.Head:FindFirstChild("GloveEsp") == nil then
+GloveEsp = Instance.new("BillboardGui", v.Character.Head)
+GloveEsp.Adornee = v.Character.Head
+GloveEsp.Name = "GloveEsp"
+GloveEsp.Size = UDim2.new(0, 100, 0, 150)
+GloveEsp.StudsOffset = Vector3.new(0, 1, 0)
+GloveEsp.AlwaysOnTop = true
+GloveEsp.StudsOffset = Vector3.new(0, 3, 0)
+GloveEspText = Instance.new("TextLabel", GloveEsp)
+GloveEspText.BackgroundTransparency = 1
+GloveEspText.Size = UDim2.new(0, 100, 0, 100)
+GloveEspText.TextSize = 25
+GloveEspText.Font = Enum.Font.SourceSansSemibold
+GloveEspText.TextColor3 = Color3.new(255, 255, 255)
+GloveEspText.TextStrokeTransparency = 0
+GloveEspText.Text = v.Glove.Value
+                end
+            end
+task.wait()
+end
+end
+                })
 
 local MiscTab = Window:MakeTab({
 	Name = "Misc",
