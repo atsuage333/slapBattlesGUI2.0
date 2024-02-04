@@ -21,7 +21,7 @@ local CombatTab = Window:MakeTab({
 })
 
 
-Tab2:AddDropdown({
+CombatTab:AddDropdown({
 	Name = "Godmode (Respawn&Breaks killstreak)",
 	Default = "",
 	Options = {"Godmode", "Godmode + Invisibility"},
