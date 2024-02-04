@@ -27,6 +27,7 @@ HomeTab:AddButton({
   	end    
 })
 
+
 HomeTab:AddButton({
 	Name = "TP to Counter 1",
 	Callback = function()
@@ -52,6 +53,7 @@ HomeTab:AddButton({
 	Name = "TP to Counter 4",
 	Callback = function()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(220.70248413085938, 12.01014518737793, -204.79151916503906)
+  	end    
 })
 
 HomeTab:AddButton({
