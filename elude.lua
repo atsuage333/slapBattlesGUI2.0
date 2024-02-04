@@ -23,15 +23,35 @@ HomeTab:AddButton({
         SafeSpot.Size = Vector3.new(5000, 50, 5000)
         SafeSpot.Anchored = true
         SafeSpot.Transparency = 0
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(96.18177795410156, -12116.0029296875, 66.97261047363281)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(53.324951171875, 278.4712829589844, 84.06188201904297)
   	end    
 })
 
 HomeTab:AddButton({
-	Name = "TP to Counter",
+	Name = "TP to Counter 1",
 	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(499.4835205078125, 80.55587005615234, 78.49658966064453)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-192.23495483398438, 14.985305786132812, -75.67790222167969)
   	end    
+})
+
+HomeTab:AddButton({
+	Name = "TP to Counter 2",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(94.82032775878906, 7.65123176574707, 55.07276153564453)
+  	end    
+})
+
+HomeTab:AddButton({
+	Name = "TP to Counter 3",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-70.20014190673828, 3.235132932662964, -209.85687255859375)
+  	end    
+})
+
+HomeTab:AddButton({
+	Name = "TP to Counter 4",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(220.70248413085938, 12.01014518737793, -204.79151916503906)
 })
 
 HomeTab:AddButton({
