@@ -15,6 +15,13 @@ HomeTab:AddButton({
 })
 
 HomeTab:AddButton({
+	Name = "Get elude",
+	Callback = function()
+      		fireclickdetecter(game.Workspace.Ruins.Elude.ClickDetecter)
+  	end    
+})
+
+HomeTab:AddButton({
 	Name = "Pim delete",
 	Callback = function()
         game.Workspace.Pim:remove()
