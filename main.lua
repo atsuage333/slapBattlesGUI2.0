@@ -23,7 +23,7 @@ HomeTab:AddButton({
   	end    
 })
 
-local HomeTab = Window:MakeTab({
+local CombatTab = Window:MakeTab({
 	Name = "Combat",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
