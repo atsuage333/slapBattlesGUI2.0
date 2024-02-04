@@ -139,7 +139,7 @@ AntiAdmins = Value
 while AntiAdmins do
 for i,v in pairs(game.Players:GetChildren()) do
                     if v:GetRankInGroup(9950771) >= 2 then
-AK:Set(false)
+AntiKick = false
                         game.Players.LocalPlayer:Kick("High Rank Player Detected.".." ("..v.Name..")")
                         break
                     end
@@ -157,6 +157,7 @@ AntiKick = Value
 while AntiKick do
 for i,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetDescendants()) do
                     if v.Name == "ErrorPrompt" then
+AK:Set(false)
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
                     end
                 end
@@ -185,7 +186,7 @@ end
 })
 
 AR = AntiTab:AddToggle({
-                    Name = "Anti Ragdoll (Resets character)",
+                    Name = "Anti Ragdoll (This will reset your character)",
                     Default = false,
                     Callback = function(Value)
 AntiRagdoll = Value
@@ -205,7 +206,7 @@ end
                 })
 
 game.Workspace.dedBarrier.Position =  Vector3.new(15, -17, 41.5)
-               AV = AntiTab:AddToggle({
+AV = AntiTab:AddToggle({
                     Name = "Anti Void (Works in tournament)",
                     Default = false,
                     Callback = function(Value)
@@ -214,7 +215,7 @@ game.Workspace.TAntiVoid.CanCollide = Value
                     end    
                 })
 
-               ADB = AntiTab:AddToggle({
+ADB = AntiTab:AddToggle({
                     Name = "Anti Death Barriers",
                     Default = false,
                     Callback = function(Value)
@@ -244,7 +245,7 @@ end
                     end    
                 })
 
-               AB = AntiTab:AddToggle({
+AB = AntiTab:AddToggle({
                     Name = "Anti Brazil",
                     Default = false,
                     Callback = function(Value)
@@ -260,84 +261,19 @@ end
                     end    
                 })
 
-               ACOD = AntiTab:AddToggle({
+ACOD = AntiTab:AddToggle({
                     Name = "Anti Cube of Death",
                     Default = false,
                     Callback = function(Value)
 if Value == true then
         workspace.Arena.CubeOfDeathArea["the cube of death(i heard it kills)"].CanTouch = false
         else
-        workspace.Arena.CubeOfDeathArea["the cube of death(i heard it kills)"].CanTouch = true
+                workspace.Arena.CubeOfDeathArea["the cube of death(i heard it kills)"].CanTouch = true
         end
                     end    
                 })
 
-               AT = AntiTab:AddToggle({
-                    Name = "Anti Timestop",
-                    Default = false,
-                    Callback = function(Value)
-AntiTimestop = Value
-while AntiTimestop do
-                for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-                    if v.ClassName == "Part" then
-                        v.Anchored = false
-                    end
-                end
-task.wait()
-end
-                    end    
-                })
-
-               AS = AntiTab:AddToggle({
-                    Name = "Anti Squid",
-                    Default = false,
-                    Callback = function(Value)
-AntiSquid = Value
-if AntiSquid == false then
-        game.Players.LocalPlayer.PlayerGui.SquidInk.Enabled = true
-        end
-while AntiSquid do
-if game.Players.LocalPlayer.PlayerGui:FindFirstChild("SquidInk") then
-        game.Players.LocalPlayer.PlayerGui.SquidInk.Enabled = false
-end
-task.wait()
-end
-                    end    
-                })
-
-               AHJ = AntiTab:AddToggle({
-                    Name = "Anti Hallow Jack",
-                    Default = false,
-                    Callback = function(Value)
-game.Players.LocalPlayer.PlayerScripts.HallowJackAbilities.Disabled = Value
-                    end    
-                })
-
-               AC = AntiTab:AddToggle({
-                    Name = "Anti Conveyor",
-                    Default = false,
-                    Callback = function(Value)
-game.Players.LocalPlayer.PlayerScripts.ConveyorVictimized.Disabled = Value
-                    end    
-                })
-
-               ABK = AntiTab:AddToggle({
-                    Name = "Anti Brick",
-                    Default = false,
-                    Callback = function(Value)
-AntiBrick = Value
-while AntiBrick do
-for i,v in pairs(game.Workspace:GetChildren()) do
-                    if v.Name == "Union" then
-                        v.CanTouch = false
-                    end
-                end
-task.wait()
-end
-                    end    
-                })
-
-               AN = AntiTab:AddToggle({
+AN = AntiTab:AddToggle({
                     Name = "Anti Null",
                     Default = false,
                     Callback = function(Value)
@@ -345,133 +281,13 @@ AntiNull = Value
 while AntiNull do
 for i,v in pairs(game.Workspace:GetChildren()) do
                     if v.Name == "Imp" and v:FindFirstChild("Body") then
-shared.gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Body,true)
+game.ReplicatedStorage.KSHit:FireServer(v.Body,true)
 end
 end
 task.wait()
 end
                     end    
                 })
-
-               ARD = AntiTab:AddToggle({
-                    Name = "Anti [REDACTED]",
-                    Default = false,
-                    Callback = function(Value)
-game.Players.LocalPlayer.PlayerScripts.Well.Disabled = Value
-                    end    
-                })
-
-               AZ = AntiTab:AddToggle({
-                    Name = "Anti Za Hando",
-                    Default = false,
-                    Callback = function(Value)
-AntiZaHando = Value
-            while AntiZaHando do
-                for i,v in pairs(game.Workspace:GetChildren()) do
-                    if v.ClassName == "Part" and v.Name == "Part" then
-                        v:Destroy()
-                    end
-                end
-task.wait()
-            end
-                    end    
-                })
-
-               ARR = AntiTab:AddToggle({
-                    Name = "Anti Reaper",
-                    Default = false,
-                    Callback = function(Value)
-AntiReaper = Value
-            while AntiReaper do
-for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-                    if v.Name == "DeathMark" then
-                        game:GetService("ReplicatedStorage").ReaperGone:FireServer(v)
-                    game:GetService("Lighting"):WaitForChild("DeathMarkColorCorrection"):Destroy() 
-                    end
-                end
-task.wait()
-end
-                    end    
-                })
-
-               AP = AntiTab:AddToggle({
-                    Name = "Anti Pusher",
-                    Default = false,
-                    Callback = function(Value)
-AntiPusher = Value
-            while AntiPusher do
-for i,v in pairs(game.Workspace:GetChildren()) do
-                    if v.Name == "wall" then
-                        v.CanCollide = false
-                    end
-                end
-task.wait()
-end
-                    end    
-                })
-
-               ABR = AntiTab:AddToggle({
-                    Name = "Anti Booster",
-                    Default = false,
-                    Callback = function(Value)
-AntiBooster = Value
-while AntiBooster do
-for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-                    if v.Name == "BoosterObject" then
-                        v:Destroy()
-                    end
-                end
-task.wait()
-end
-                    end    
-                })
-
-               AM = AntiTab:AddToggle({
-                    Name = "Anti Mail",
-                    Default = false,
-                    Callback = function(Value)
-game.Players.LocalPlayer.Character.YouHaveGotMail.Disabled = Value
-AntiMail = Value
-while AntiMail do
-if game.Players.LocalPlayer.Character:FindFirstChild("YouHaveGotMail") then
-        game.Players.LocalPlayer.Character.YouHaveGotMail.Disabled = true
-end
-task.wait()
-end
-                    end    
-                })
-
-              ASN = AntiTab:AddToggle({
-                    Name = "Anti Stun",
-                    Default = false,
-                    Callback = function(Value)
-AntiStun = Value
-while AntiStun do
-if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Workspace:FindFirstChild("Shockwave") and game.Players.LocalPlayer.Character.Ragdolled.Value == false then
-game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
-end
-task.wait()
-end
-                    end    
-                })
-
-               AMC = AntiTab:AddToggle({
-                    Name = "Anti Megarock/Custom",
-                    Default = false,
-                    Callback = function(Value)
-AntiRock = Value
-while AntiRock do
-for i,v in pairs(game.Workspace:GetDescendants()) do
-                    if v.Name == "rock" then
-                        v.CanTouch = false
-                        v.CanQuery = false
-                    end
-                end
-task.wait()
-end
-                    end    
-                })
-
 
 local BadgeTab = Window:MakeTab({
 	Name = "Badge",
