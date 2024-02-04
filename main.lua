@@ -10,7 +10,7 @@ local HomeTab = Window:MakeTab({
 HomeTab:AddButton({
 	Name = "Go retro start",
 	Callback = function()
-		game:GetService("ReplicatedStorage").RetroTP:FireServer()
+		game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
   	end    
 })
@@ -18,7 +18,7 @@ HomeTab:AddButton({
 HomeTab:AddButton({
 	Name = "Go Admin button",
 	Callback = function()
-	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
+	       game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
   	end    
 })
