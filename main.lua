@@ -20,6 +20,17 @@ local CombatTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+CombatTab:AddButton({
+	Name = "Inf 250 power (Needs 2 True Powers) (Use before other items)",
+	Callback = function()
+for i = 1, 2 do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["True Power"])
+game.Players.LocalPlayer.Character["True Power"]:Activate()
+end
+                    end    	
+                })
+
+
 CombatTab:AddToggle({
 	Name = "Rythm Spam",
 	Default = false,
