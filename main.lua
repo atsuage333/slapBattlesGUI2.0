@@ -29,37 +29,15 @@ CombatTab:AddToggle({
 })
 
 CombatTab:AddToggle({
-                    Name = "Glove ESP",
+                    Name = "Auto Enter Arena",
                     Default = false,
                     Callback = function(Value)
-GloveESP = Value
-if GloveESP == false then
-for i, v in ipairs(game.Players:GetChildren()) do
-                if v.Character and v.Character:FindFirstChild("Head") and v.Character.Head:FindFirstChild("GloveEsp") then
- v.Character.Head.GloveEsp:Destroy()
-                end
-            end
-end
-while GloveESP do
-for i, v in ipairs(game.Players:GetChildren()) do
-                if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Head") and v.Character.inMatch.Value == true and v.Character.Head:FindFirstChild("GloveEsp") == nil then
-GloveEsp = Instance.new("BillboardGui", v.Character.Head)
-GloveEsp.Adornee = v.Character.Head
-GloveEsp.Name = "GloveEsp"
-GloveEsp.Size = UDim2.new(0, 100, 0, 150)
-GloveEsp.StudsOffset = Vector3.new(0, 1, 0)
-GloveEsp.AlwaysOnTop = true
-GloveEsp.StudsOffset = Vector3.new(0, 3, 0)
-GloveEspText = Instance.new("TextLabel", GloveEsp)
-GloveEspText.BackgroundTransparency = 1
-GloveEspText.Size = UDim2.new(0, 100, 0, 100)
-GloveEspText.TextSize = 25
-GloveEspText.Font = Enum.Font.SourceSansSemibold
-GloveEspText.TextColor3 = Color3.new(255, 255, 255)
-GloveEspText.TextStrokeTransparency = 0
-GloveEspText.Text = v.Glove.Value
-                end
-            end
+AutoEnterArena = Value
+while AutoEnterArena do
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 1)
+    end
 task.wait()
 end
 end
