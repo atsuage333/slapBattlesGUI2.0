@@ -27,6 +27,13 @@ end)
 	end    
 })
 
+HomeTab:AddButton({
+	Name = "Destroy Gui",
+	Callback = function()
+	      OrionLib:Destroy()
+  	end    
+})
+
 OrionLib:Init()
 --[[
 Name = <string> - The name of the toggle.
