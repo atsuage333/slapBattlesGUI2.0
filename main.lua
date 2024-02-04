@@ -56,6 +56,34 @@ BadgeTab:AddButton({
   	end    
 })
 
+BadgeTab:AddButton({
+	Name = "Go Admin",
+	Callback = function()
+	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
+  	end    
+})
+
+BadgeTab:AddButton({
+	Name = "Get Elude",
+	Callback = function()
+local teleportFunc = queueonteleport or queue_on_teleport
+if teleportFunc then
+    teleportFunc([[
+        if not game:IsLoaded() then
+            game.Loaded:Wait()
+        end
+        repeat wait() until game.Players.LocalPlayer
+        game:GetService("RunService").RenderStepped:Connect(function()
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-502.336, 14.228, -179.597)
+        end)
+game:GetService("TeleportService"):Teleport(6403373529)
+    ]])
+end
+game:GetService("TeleportService"):Teleport(11828384869)
+  	end    
+})
+
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
