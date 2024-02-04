@@ -20,6 +20,35 @@ local CombatTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+
+CombatTab:AddButton({
+	Name = "Godmode (Resets character) (Breaks killstreak)",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 1)
+end
+repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") or game.Players.LocalPlayer.Backpack:FindFirstChildWhichIsA("Tool")
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        v.Parent = game.LogService
+                    end
+                end
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        v.Parent = game.LogService
+                end
+game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
+wait(3.75)
+for i,v in pairs(game.LogService:GetChildren()) do
+                        v.Parent = game.Players.LocalPlayer.Backpack
+                end
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                end 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Origo.CFrame * CFrame.new(0,-5,0)
+                    end    
+                })
+
  CombatTab:AddToggle({
                     Name = "Rhythm Spam",
                     Default = false,
