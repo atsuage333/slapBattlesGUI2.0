@@ -1,6 +1,6 @@
-if game.placeID == 6403373529 then
+if game.PlaceID == 6403373529 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Slap battles Gui2.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Slap battles Gui2.0", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 local HomeTab = Window:MakeTab({
 	Name = "Home",
