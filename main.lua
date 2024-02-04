@@ -16,6 +16,14 @@ HomeTab:AddButton({
 })
 
 HomeTab:AddButton({
+	Name = "Destroy Gui",
+	Callback = function()
+	      OrionLib:Destroy()
+  	end    
+})
+
+
+HomeTab:AddButton({
 	Name = "Go Admin",
 	Callback = function()
 	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
