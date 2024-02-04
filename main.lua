@@ -645,7 +645,7 @@ end
                 })
 
 Tab4:AddButton({
-	Name = "Free Emotes (Type /e emotename)",
+	Name = "Free Emotes not FE (Type /e emotename)",
 	Callback = function()
 Floss = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game.ReplicatedStorage.AnimationPack.Floss, game.Players.LocalPlayer.Character.Humanoid)
 Groove = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game.ReplicatedStorage.AnimationPack.Groove, game.Players.LocalPlayer.Character.Humanoid)
@@ -3497,6 +3497,22 @@ game:GetService("TeleportService"):Teleport(11828384869)
   	end    
 })
 
+Tab2:AddToggle({
+                    Name = "Get Retro",
+                    Default = false,
+                    Callback = function(Value)
+AutoEnterArena = Value
+while AutoEnterArena do
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 1)
+    end
+task.wait()
+end
+end
+                })
+
+	
 Tab6:AddLabel("When in the elude maze there is a counter feature")
 
 Tab6:AddButton({
