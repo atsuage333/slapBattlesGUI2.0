@@ -20,7 +20,6 @@ local CombatTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-
 CombatTab:AddDropdown({
 	Name = "Godmode (Respawn&Breaks killstreak)",
 	Default = "",
@@ -123,7 +122,7 @@ local AntiTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
- AntiTab:AddToggle({
+AntiTab:AddToggle({
                     Name = "Anti Death Barriers",
                     Default = false,
                     Callback = function(Value)
