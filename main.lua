@@ -21,9 +21,12 @@ local CombatTab = Window:MakeTab({
 })
 
 
-CombatTab:AddButton({
-	Name = "Godmode (Resets character) (Breaks killstreak)",
-	Callback = function()
+Tab2:AddDropdown({
+	Name = "Godmode (Respawn&Breaks killstreak)",
+	Default = "",
+	Options = {"Godmode", "Godmode + Invisibility"},
+	Callback = function(Value)
+if Value == "Godmode" then
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
 firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 1)
@@ -46,8 +49,40 @@ for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
                 end 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Origo.CFrame * CFrame.new(0,-5,0)
-                    end    
-                })
+elseif Value == "Godmode + Invisibility" then
+if game.Players.LocalPlayer.leaderstats.Slaps.Value >= 666 then
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 1)
+end
+repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") or game.Players.LocalPlayer.Backpack:FindFirstChildWhichIsA("Tool")
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        v.Parent = game.LogService
+                    end
+                end
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        v.Parent = game.LogService
+                end
+game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
+wait(3.75)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(workspace.Lobby.Ghost.ClickDetector)
+game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+for i,v in pairs(game.LogService:GetChildren()) do
+                        v.Parent = game.Players.LocalPlayer.Backpack
+                end
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                end 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Origo.CFrame * CFrame.new(0,-5,0)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "You need 666+ slaps.",Image = "rbxassetid://7733658504",Time = 5})
+end
+end
+	end    
+})
 
  CombatTab:AddToggle({
                     Name = "Rhythm Spam",
