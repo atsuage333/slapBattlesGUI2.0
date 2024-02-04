@@ -23,6 +23,11 @@ HomeTab:AddButton({
   	end    
 })
 
+local HomeTab = Window:MakeTab({
+	Name = "Combat",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
 --[[
 Name = <string> - The name of the UI.
