@@ -17,7 +17,7 @@ HomeTab:AddButton({
 HomeTab:AddButton({
 	Name = "Get elude",
 	Callback = function()
-      		fireclickdetecter(game.Workspace.Ruins.Elude.ClickDetecter)
+      		firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Ruin.Elude.Glove, Script)
   	end    
 })
 
