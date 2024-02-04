@@ -17,7 +17,7 @@ HomeTab:AddButton({
 HomeTab:AddButton({
 	Name = "Get elude",
 	Callback = function()
-      		firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Ruins.Elude.Glove, Script)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Ruins.Elude.CFrame * CFrame.new(0,1.5,0) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(0))
   	end    
 })
 
