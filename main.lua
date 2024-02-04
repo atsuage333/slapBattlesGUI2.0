@@ -8,26 +8,9 @@ local HomeTab = Window:MakeTab({
 })
 
 HomeTab:AddButton({
-	Name = "Go retro start(TEST)",
-	Callback = function()
-		game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
-  	end    
-})
-
-HomeTab:AddButton({
 	Name = "Destroy Gui",
 	Callback = function()
 	      OrionLib:Destroy()
-  	end    
-})
-
-
-HomeTab:AddButton({
-	Name = "Go Admin",
-	Callback = function()
-	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
   	end    
 })
 
@@ -44,6 +27,35 @@ CombatTab:AddToggle({
 		print(Value)
 	end    
 })
+
+local MiscTab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local BadgeTab = Window:MakeTab({
+	Name = "Badge",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+BadgeTab:AddButton({
+	Name = "Go retro start(TEST)",
+	Callback = function()
+		game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
+  	end    
+})
+
+HomeTab:AddButton({
+	Name = "Go Admin",
+	Callback = function()
+	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
+  	end    
+})
+
 
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
