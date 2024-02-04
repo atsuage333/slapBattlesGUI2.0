@@ -15,6 +15,13 @@ HomeTab:AddButton({
 })
 
 HomeTab:AddButton({
+	Name = "Pim delete",
+	Callback = function()
+        game.Workspace.Pim:remove()
+  	end    
+})
+
+HomeTab:AddButton({
 	Name = "Safe spot TP(pim doesn't come)",
 	Callback = function()
         local SafeSpot = Instance.new("Part", workspace)
@@ -27,32 +34,10 @@ HomeTab:AddButton({
   	end    
 })
 
-
 HomeTab:AddButton({
-	Name = "TP to Counter 1",
+	Name = "TP to Counter",
 	Callback = function()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-192.23495483398438, 14.985305786132812, -75.67790222167969)
-  	end    
-})
-
-HomeTab:AddButton({
-	Name = "TP to Counter 2",
-	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(94.82032775878906, 7.65123176574707, 55.07276153564453)
-  	end    
-})
-
-HomeTab:AddButton({
-	Name = "TP to Counter 3",
-	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-70.20014190673828, 3.235132932662964, -209.85687255859375)
-  	end    
-})
-
-HomeTab:AddButton({
-	Name = "TP to Counter 4",
-	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(220.70248413085938, 12.01014518737793, -204.79151916503906)
   	end    
 })
 
