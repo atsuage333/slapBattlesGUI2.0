@@ -496,6 +496,7 @@ end
                 BadgeTab:AddButton({
                     Name = "Get Tycoon(10 min) arena only",
                     Callback = function()
+                        OrionLib:MakeNotification({Name = "Hint",Content = "We recommend enabling the anti death barrier in the Anti option. Otherwise I'll die.",Image = "rbxassetid://7733658504",Time = 5})
                               repeat task.wait()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Arena.Plate.CFrame * CFrame.new(0,-1.5,0) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(0))
                 until game.Players.LocalPlayer.PlayerGui.PlateIndicator.TextLabel.Text == "Plate Counter: 600"
