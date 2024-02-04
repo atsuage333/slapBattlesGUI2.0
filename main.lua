@@ -116,6 +116,20 @@ local MiscTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+MiscTab:AddButton({
+	Name = "Destroy all tycoons",
+	Callback = function()
+for i = 1, 110 do
+ for i,v in pairs(workspace:GetDescendants()) do
+        if v.Name == "Destruct" and v:FindFirstChild("ClickDetector") then
+            fireclickdetector(v.ClickDetector)
+        end
+    end
+task.wait()
+end
+                    end    
+                })
+
 local AntiTab = Window:MakeTab({
 	Name = "Anti",
 	Icon = "rbxassetid://4483345998",
