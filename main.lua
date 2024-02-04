@@ -56,7 +56,6 @@ BadgeTab:AddButton({
   	end    
 })
 
-
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
