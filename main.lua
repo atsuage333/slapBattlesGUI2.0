@@ -4,7 +4,6 @@ local Window = OrionLib:MakeWindow({Name = "Slap battles Gui2.0", HidePremium = 
 
 local HomeTab = Window:MakeTab({
 	Name = "Home",
-	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
