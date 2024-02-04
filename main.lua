@@ -283,6 +283,13 @@ game:GetService("TeleportService"):Teleport(11828384869)
 })
 
 BadgeTab:AddButton({
+	Name = "Get counter",
+	Callback = function()
+    game:GetService("TeleportService"):Teleport(11828384869)
+  	end    
+})
+
+BadgeTab:AddButton({
 	Name = "Fast Brick farm",
 	Callback = function()
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick" then
