@@ -124,89 +124,6 @@ local AntiTab = Window:MakeTab({
 })
 
 AntiTab:AddToggle({
-                    Name = "Toggle All Antis",
-                    Default = false,
-                    Callback = function(Value)
-game.Workspace.NoChanged.Value = Value
-end
-})
-
-AA = AntiTab:AddToggle({
-                    Name = "Anti Admins",
-                    Default = false,
-                    Callback = function(Value)
-AntiAdmins = Value
-while AntiAdmins do
-for i,v in pairs(game.Players:GetChildren()) do
-                    if v:GetRankInGroup(9950771) >= 2 then
-AntiKick = false
-                        game.Players.LocalPlayer:Kick("High Rank Player Detected.".." ("..v.Name..")")
-                        break
-                    end
-                end
-task.wait()
-end
-end
-})
-
-AK = AntiTab:AddToggle({
-                    Name = "Anti Kick",
-                    Default = false,
-                    Callback = function(Value)
-AntiKick = Value
-while AntiKick do
-for i,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetDescendants()) do
-                    if v.Name == "ErrorPrompt" then
-AK:Set(false)
-game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
-                    end
-                end
-task.wait()
-end
-end
-})
-
-APL = AntiTab:AddToggle({
-                    Name = "Anti Portal",
-                    Default = false,
-                    Callback = function(Value)
-AntiPortal = Value
-if AntiPortal == true then
-workspace.Lobby.Teleport2.CanTouch = false
-workspace.Lobby.Teleport3.CanTouch = false
-workspace.Lobby.Teleport4.CanTouch = false
-workspace.Lobby.Teleport6.CanTouch = false
-else
-workspace.Lobby.Teleport2.CanTouch = true
-workspace.Lobby.Teleport3.CanTouch = true
-workspace.Lobby.Teleport4.CanTouch = true
-workspace.Lobby.Teleport6.CanTouch = true
-end
-end
-})
-
-AR = AntiTab:AddToggle({
-                    Name = "Anti Ragdoll (This will reset your character)",
-                    Default = false,
-                    Callback = function(Value)
-AntiRagdoll = Value
-if AntiRagdoll then
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
-game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Changed:Connect(function()
-if game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == true and AntiRagdoll then
-repeat task.wait() game.Players.LocalPlayer.Character.Torso.Anchored = true
-until game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == false
-game.Players.LocalPlayer.Character.Torso.Anchored = false
-end
-end)
-end)
-end
-                    end    
-                })
-
-game.Workspace.dedBarrier.Position =  Vector3.new(15, -17, 41.5)
-AV = AntiTab:AddToggle({
                     Name = "Anti Void (Works in tournament)",
                     Default = false,
                     Callback = function(Value)
@@ -215,7 +132,7 @@ game.Workspace.TAntiVoid.CanCollide = Value
                     end    
                 })
 
-ADB = AntiTab:AddToggle({
+ AntiTab:AddToggle({
                     Name = "Anti Death Barriers",
                     Default = false,
                     Callback = function(Value)
@@ -245,7 +162,121 @@ end
                     end    
                 })
 
-AB = AntiTab:AddToggle({
+AntiTab:AddToggle({
+                    Name = "Anti Admins",
+                    Default = false,
+                    Callback = function(Value)
+AntiAdmins = Value
+while AntiAdmins do
+for i,v in pairs(game.Players:GetChildren()) do
+                    if v:GetRankInGroup(9950771) >= 2 then
+AntiKick = false
+                        game.Players.LocalPlayer:Kick("High Rank Player Detected.".." ("..v.Name..")")
+                        break
+                    end
+                end
+task.wait()
+end
+end
+})
+
+AntiTab:AddToggle({
+                    Name = "Anti Kick",
+                    Default = false,
+                    Callback = function(Value)
+AntiKick = Value
+while AntiKick do
+for i,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetDescendants()) do
+                    if v.Name == "ErrorPrompt" then
+AK:Set(false)
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+                    end
+                end
+task.wait()
+end
+end
+})
+
+AntiTab:AddToggle({
+                    Name = "Anti Portal",
+                    Default = false,
+                    Callback = function(Value)
+AntiPortal = Value
+if AntiPortal == true then
+workspace.Lobby.Teleport2.CanTouch = false
+workspace.Lobby.Teleport3.CanTouch = false
+workspace.Lobby.Teleport4.CanTouch = false
+workspace.Lobby.Teleport6.CanTouch = false
+else
+workspace.Lobby.Teleport2.CanTouch = true
+workspace.Lobby.Teleport3.CanTouch = true
+workspace.Lobby.Teleport4.CanTouch = true
+workspace.Lobby.Teleport6.CanTouch = true
+end
+end
+})
+
+AntiTab:AddToggle({
+                    Name = "Anti Ragdoll (This will reset your character)",
+                    Default = false,
+                    Callback = function(Value)
+AntiRagdoll = Value
+if AntiRagdoll then
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Changed:Connect(function()
+if game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == true and AntiRagdoll then
+repeat task.wait() game.Players.LocalPlayer.Character.Torso.Anchored = true
+until game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == false
+game.Players.LocalPlayer.Character.Torso.Anchored = false
+end
+end)
+end)
+end
+                    end    
+                })
+game.Workspace.dedBarrier.Position =  Vector3.new(15, -17, 41.5)
+
+AntiTab:AddToggle({
+                    Name = "Anti Void (Works in tournament)",
+                    Default = false,
+                    Callback = function(Value)
+game.Workspace.dedBarrier.CanCollide = Value
+game.Workspace.TAntiVoid.CanCollide = Value
+                    end    
+                })
+
+AntiTab:AddToggle({
+                    Name = "Anti Death Barriers",
+                    Default = false,
+                    Callback = function(Value)
+if Value == true then
+for i,v in pairs(game.Workspace.DEATHBARRIER:GetChildren()) do
+                    if v.ClassName == "Part" and v.Name == "BLOCK" then
+                        v.CanTouch = false
+                    end
+                end
+workspace.DEATHBARRIER.CanTouch = false
+workspace.DEATHBARRIER2.CanTouch = false
+workspace.dedBarrier.CanTouch = false
+workspace.ArenaBarrier.CanTouch = false
+workspace.AntiDefaultArena.CanTouch = false
+else
+for i,v in pairs(game.Workspace.DEATHBARRIER:GetChildren()) do
+                    if v.ClassName == "Part" and v.Name == "BLOCK" then
+                        v.CanTouch = true
+                    end
+                end
+workspace.DEATHBARRIER.CanTouch = true
+workspace.DEATHBARRIER2.CanTouch = true
+workspace.dedBarrier.CanTouch = true
+workspace.ArenaBarrier.CanTouch = true
+workspace.AntiDefaultArena.CanTouch = true
+end
+                    end    
+                })
+
+AntiTab:AddToggle({
                     Name = "Anti Brazil",
                     Default = false,
                     Callback = function(Value)
@@ -261,7 +292,7 @@ end
                     end    
                 })
 
-ACOD = AntiTab:AddToggle({
+AntiTab:AddToggle({
                     Name = "Anti Cube of Death",
                     Default = false,
                     Callback = function(Value)
@@ -273,7 +304,7 @@ if Value == true then
                     end    
                 })
 
-AN = AntiTab:AddToggle({
+AntiTab:AddToggle({
                     Name = "Anti Null",
                     Default = false,
                     Callback = function(Value)
