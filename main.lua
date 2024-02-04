@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 local Window = OrionLib:MakeWindow({Name = "Slapbattles", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local HomeTab = Window:MakeTab({
@@ -8,7 +8,7 @@ local HomeTab = Window:MakeTab({
 })
 
 HomeTab:AddButton({
-	Name = "Go retro start",
+	Name = "Go retro start(TEST)",
 	Callback = function()
 		game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
@@ -16,9 +16,9 @@ HomeTab:AddButton({
 })
 
 HomeTab:AddButton({
-	Name = "Go Admin button",
+	Name = "Go Admin",
 	Callback = function()
-	       game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
+	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
   	end    
 })
@@ -28,6 +28,20 @@ local CombatTab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+CombatTab:AddToggle({
+	Name = "Rythm Spam",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
+]]
 
 --[[
 Name = <string> - The name of the UI.
