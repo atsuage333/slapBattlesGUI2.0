@@ -8,29 +8,15 @@ local HomeTab = Window:MakeTab({
 })
 
 HomeTab:AddButton({
-	Name = "Go retro start(TEST)",
+	Name = "TP Obby end",
 	Callback = function()
 		game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
   	end    
 })
 
-HomeTab:AddButton({
-	Name = "Go Admin",
-	Callback = function()
-	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16976, 801.0068359375, 4907)
-  	end    
-})
-
-local CombatTab = Window:MakeTab({
-	Name = "Combat",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-CombatTab:AddToggle({
-	Name = "Rythm Spam",
+HomeTab:AddToggle({
+	Name = "AntiAFK",
 	Default = false,
 	Callback = function(Value)
 		print(Value)
