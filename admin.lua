@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
-local Window = OrionLib:MakeWindow({Name = "Slapbattles｜Admin", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "SlapbattlesGUI Admin", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local HomeTab = Window:MakeTab({
 	Name = "Home",
