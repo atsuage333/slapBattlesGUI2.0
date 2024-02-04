@@ -48,7 +48,7 @@ BadgeTab:AddButton({
   	end    
 })
 
-HomeTab:AddButton({
+BadgeTab:AddButton({
 	Name = "Go Admin",
 	Callback = function()
 	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
