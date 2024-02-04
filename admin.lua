@@ -8,9 +8,9 @@ local HomeTab = Window:MakeTab({
 })
 
 HomeTab:AddButton({
-	Name = "TP Obby end",
+	Name = "TP End room",
 	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(499.74884033203125, 80.42921447753906, 58.979248046875)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(499.4835205078125, 80.55587005615234, 78.49658966064453)
   	end    
 })
 
