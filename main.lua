@@ -123,15 +123,6 @@ local AntiTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-AntiTab:AddToggle({
-                    Name = "Anti Void (Works in tournament)",
-                    Default = false,
-                    Callback = function(Value)
-game.Workspace.dedBarrier.CanCollide = Value
-game.Workspace.TAntiVoid.CanCollide = Value
-                    end    
-                })
-
  AntiTab:AddToggle({
                     Name = "Anti Death Barriers",
                     Default = false,
