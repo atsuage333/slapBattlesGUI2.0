@@ -10,8 +10,7 @@ local HomeTab = Window:MakeTab({
 HomeTab:AddButton({
 	Name = "TP Obby end",
 	Callback = function()
-		game:GetService("ReplicatedStorage").EnterRetroObby:FireServer()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(499.74884033203125, 80.42921447753906, 58.979248046875)
   	end    
 })
 
