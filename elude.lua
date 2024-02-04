@@ -18,12 +18,12 @@ HomeTab:AddButton({
 	Name = "Safe spot TP(pim doesn't come)",
 	Callback = function()
         local SafeSpot = Instance.new("Part", workspace)
-        SafeSpot.Position = Vector3.new(96, -12144, 77)
+        SafeSpot.Position = Vector3.new(53.324951171875, 278.4712829589844, 84.06188201904297)
         SafeSpot.Name = "SafeSpot"
         SafeSpot.Size = Vector3.new(5000, 50, 5000)
         SafeSpot.Anchored = true
         SafeSpot.Transparency = 0
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(53.324951171875, 278.4712829589844, 84.06188201904297)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-194.94619750976562, 306.47119140625, -8.577287673950195)
   	end    
 })
 
