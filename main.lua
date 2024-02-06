@@ -149,7 +149,7 @@ setclipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyus
                     end    
                 })
 
-Tab4:AddToggle({
+MiscTab:AddToggle({
                     Name = "Slapple Farm (Only works in arena)",
                     Default = false,
                     Callback = function(Value)
