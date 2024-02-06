@@ -287,6 +287,13 @@ BadgeTab:AddButton({
 })
 
 BadgeTab:AddButton({
+	Name = "Go retro start 2",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
+  	end    
+})
+
+BadgeTab:AddButton({
 	Name = "Go Admin",
 	Callback = function()
 	        game:GetService("ReplicatedStorage").RetroTP:FireServer()
