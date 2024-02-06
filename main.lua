@@ -142,6 +142,38 @@ local MiscTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+MiscTab:AddToggle({
+                    Name = "Replica Slap Farm (Use default arena portal)",
+                    Default = false,
+                    Callback = function(Value)
+ReplicaFarm = Value
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" and game.Players.LocalPlayer.Character.IsInDefaultArena.Value == true then
+if ReplicaFarm == true then
+coroutine.wrap(SpamReplica)()
+end
+while ReplicaFarm do
+for i, v in pairs(workspace:GetChildren()) do
+                if v.Name:match(game.Players.LocalPlayer.Name) and v:FindFirstChild("HumanoidRootPart") then
+game.ReplicatedStorage.b:FireServer(v:WaitForChild("HumanoidRootPart"))
+                end
+            end
+task.wait()
+                       end
+elseif ReplicaFarm == true then
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Replica equipped, or you aren't in the Default arena.",Image = "rbxassetid://7733658504",Time = 5})
+wait(0.05)
+RSF:Set(false)
+end
+end
+                })
+function SpamReplica()
+while ReplicaFarm do
+                           game:GetService("ReplicatedStorage").Duplicate:FireServer()
+                       wait(19.9)
+                       end
+end
+
+
 MiscTab:AddButton({
 	Name = "Destroy all tycoons",
 	Callback = function()
