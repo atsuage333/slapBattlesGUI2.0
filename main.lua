@@ -279,6 +279,21 @@ local BadgeTab = Window:MakeTab({
 })
 
 BadgeTab:AddButton({
+	Name = "Go limbo bob plush",
+	Callback = function()
+	        game:GetService("ReplicatedStorage").RepressedMemoriesMap.Parent = game.workspace
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(18478.27734375, 3069.2080078125, -397.5941467285156)
+  	end    
+})
+
+BadgeTab:AddButton({
+	Name = "Go limbo",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(18459.96484375, 2954.3212890625, -228.425537109375)
+  	end    
+})
+
+BadgeTab:AddButton({
 	Name = "Go retro start(TEST)",
 	Callback = function()
 	        game:GetService("ReplicatedStorage").Assets.Retro.Map.RetroObbyMap.Parent = game.workspace
