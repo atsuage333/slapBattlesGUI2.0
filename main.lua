@@ -142,6 +142,31 @@ local MiscTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+MiscTab:AddButton({
+	Name = "Superfast Slapple Farm (Copies script, put in autoexec)",
+	Callback = function()
+setclipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Farm'))()")
+                    end    
+                })
+
+Tab4:AddToggle({
+                    Name = "Slapple Farm (Only works in arena)",
+                    Default = false,
+                    Callback = function(Value)
+SlappleFarm = Value
+while SlappleFarm do
+for i, v in ipairs(workspace.Arena.island5.Slapples:GetDescendants()) do
+                if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character:FindFirstChild("entered") and v.Name == "Glove" and v:FindFirstChildWhichIsA("TouchTransmitter") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
+        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 1)
+                end
+            end
+task.wait()
+end
+end
+                })
+
+
 MiscTab:AddToggle({
                     Name = "Replica Slap Farm (Use default arena portal)",
                     Default = false,
