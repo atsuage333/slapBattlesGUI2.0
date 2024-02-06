@@ -281,7 +281,6 @@ local BadgeTab = Window:MakeTab({
 BadgeTab:AddButton({
 	Name = "Go retro start(TEST)",
 	Callback = function()
-		game:GetService("ReplicatedStorage").Assets.Retro.RetroObbyMap.Parent = game.workspace　
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16863.748046875, -3.3500030040740967, 4766.528808593757)
   	end    
 })
