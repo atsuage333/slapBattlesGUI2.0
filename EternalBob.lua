@@ -24,8 +24,71 @@ CombatTab:AddToggle({
 	Name = "Auto attack",
 	Default = false,
 	Callback = function(Value)
-        while task.wait(0.1) do
+		EternalBobSlap = Value
+        while EternalBobSlap do
             local Event = game:GetService("Workspace").bobBoss.DamageEvent Event:FireServer()
+            end
+	end    
+})
+
+local PlayerTab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+PlayerTab:AddSlider({
+	Name = "Walkspeed",
+	Min = 20,
+	Max = 1000,
+	Default = 20,
+	Color = Color3.fromRGB(140, 185, 255),
+	Increment = 1,
+	ValueName = "WS",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+Walkspeed = Value
+	end    
+})
+
+PlayerTab:AddToggle({
+	Name = "Keep Walkspeed",
+	Default = false,
+	Callback = function(Value)
+KeepWalkspeed = Value
+            while KeepWalkspeed do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Walkspeed then
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+                end
+task.wait()
+            end
+	end    
+})
+
+PlayerTab:AddSlider({
+	Name = "Jumppower",
+	Min = 50,
+	Max = 1000,
+	Default = 50,
+	Color = Color3.fromRGB(255, 185, 140),
+	Increment = 1,
+	ValueName = "JP",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+Jumppower = Value
+	end    
+})
+
+PlayerTab:AddToggle({
+	Name = "Keep Jumppower",
+	Default = false,
+	Callback = function(Value)
+KeepJumppower = Value
+            while KeepJumppower do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Jumppower then
+                    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jumppower
+                end
+task.wait()
             end
 	end    
 })
