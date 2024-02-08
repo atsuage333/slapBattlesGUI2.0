@@ -27,6 +27,7 @@ CombatTab:AddToggle({
 		EternalBobSlap = Value
         while EternalBobSlap do
             local Event = game:GetService("Workspace").bobBoss.DamageEvent Event:FireServer()
+				wait(0.1)
             end
 	end    
 })
