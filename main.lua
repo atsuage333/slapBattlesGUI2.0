@@ -109,6 +109,92 @@ end
 	end    
 })
 
+CombatTab:AddButton({
+	Name = "Slap Speed INF",
+	Callback = function()
+       local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
+ 
+while character.Humanoid.Health ~= 0 do
+local localscript = tool:FindFirstChildOfClass("LocalScript")
+local localscriptclone = localscript:Clone()
+localscriptclone = localscript:Clone()
+localscriptclone:Clone()
+localscript:Destroy()
+localscriptclone.Parent = tool
+wait(0.1)
+end
+  	end    
+})
+
+CombatTab:AddButton({
+	Name = "Slap Speed INF (Bull)",
+	Callback = function()
+             local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
+ 
+while character.Humanoid.Health ~= 0 do
+local localscript = tool:FindFirstChildOfClass("LocalScript")
+local localscriptclone = localscript:Clone()
+localscriptclone = localscript:Clone()
+localscriptclone:Clone()
+localscript:Destroy()
+localscriptclone.Parent = tool
+wait(0.1)
+end
+  	end    
+})
+
+CombatTab:AddButton({
+	Name = "Slap Speed INF (Bull)",
+	Callback = function()
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+        local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
+        player.character.tool.Size = x == 50, y == 50, z == 50
+  	end    
+})
+
+CombatTab:AddDropdown({
+	Name = "Reach",
+	Default = "25",
+	Options = {"25", "50"},
+	Callback = function(Value)
+		if Value == "25" then
+				local plr = game.Players.LocalPlayer
+
+function supaSiza(v)
+   if v:IsA("Tool") then
+       v.Glove.Transparency = 0.90
+       v.Glove.Size = Vector3.new(25, 25, 25)
+   end
+end
+
+plr.Character.ChildAdded:Connect(supaSiza)
+
+plr.CharacterAdded:Connect(function(char)
+   char.ChildAdded:Connect(supaSiza)
+end)
+elseif Value == "25" then
+			local plr = game.Players.LocalPlayer
+
+function supaSiza(v)
+   if v:IsA("Tool") then
+       v.Glove.Transparency = 0.90
+       v.Glove.Size = Vector3.new(50, 50, 50)
+   end
+end
+
+plr.Character.ChildAdded:Connect(supaSiza)
+
+plr.CharacterAdded:Connect(function(char)
+   char.ChildAdded:Connect(supaSiza)
+end)	
+	end    
+})
+
  CombatTab:AddToggle({
                     Name = "Rhythm Spam",
                     Default = false,
