@@ -121,6 +121,35 @@ end
                     end    
                 })
 
+CombatTab:AddButton({
+	Name = "Kick player (Needs Za Hando) (Inconsistent)",
+	Callback = function()
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Za Hando" then
+OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+OGWS = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+OGJP = game.Players.LocalPlayer.Character.Humanoid.JumpPower
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+                        v.CanTouch = false
+                end
+game:GetService("ReplicatedStorage").Erase:FireServer()
+wait(0.47)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-725,310,-2)
+wait(3.75)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = OGWS
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = OGJP
+for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
+                        v.CanTouch = true
+                end
+else
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Za Hando equipped.",Image = "rbxassetid://7733658504",Time = 5})
+end
+                    end    
+                })
+
+
 CombatTab:AddToggle({
                     Name = "Auto Enter Arena",
                     Default = false,
