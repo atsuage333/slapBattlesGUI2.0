@@ -148,7 +148,7 @@ end
 })
 
 CombatTab:AddButton({
-	Name = "Reach",
+	Name = "Reach(Needs Respawn)",
 	Callback = function()
           local plr = game.Players.LocalPlayer
 
