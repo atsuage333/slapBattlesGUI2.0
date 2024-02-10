@@ -142,7 +142,7 @@ localscriptclone = localscript:Clone()
 localscriptclone:Clone()
 localscript:Destroy()
 localscriptclone.Parent = tool
-wait(0.1)
+wait(0.7)
 end
   	end    
 })
