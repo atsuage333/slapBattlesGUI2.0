@@ -53,6 +53,120 @@ end
                     end    
                 })
 
+				CombatTab:AddToggle({
+					Name = "Auto Remove Big Meteors",
+					Default = false,
+					Callback = function(Value)
+						_G.AutoRemoveBigMeteors = Value
+				while _G.AutoRemoveBigMeteors do
+				if game:GetService("Players").LocalPlayer.PlayerScripts.VFXListener:FindFirstChild("BigExplosion") then
+				game:GetService("Players").LocalPlayer.PlayerScripts.VFXListener.BigExplosion:Destroy()
+				end
+				task.wait()
+				end
+					end    
+				})
+				
+				CombatTab:AddToggle({
+					Name = "Auto Remove Small Meteors",
+					Default = false,
+					Callback = function(Value)
+						_G.AutoRemoveSmallMeteors = Value
+				while _G.AutoRemoveSmallMeteors do
+				if game:GetService("Players").LocalPlayer.PlayerScripts.VFXListener:FindFirstChild("SmallMeteorVFX") then
+				game:GetService("Players").LocalPlayer.PlayerScripts.VFXListener.SmallMeteorVFX:Destroy()
+				end
+				task.wait()
+				end
+					end    
+				})
+
+				CombatTab:AddToggle({
+					Name = "Auto Slap miniBob",
+					Default = false,
+					Callback = function(Value)
+				_G.SlapBob = Value
+				while _G.SlapBob and GloveSlap == "Killstreak" do
+				game:GetService("ReplicatedStorage").KSHit:FireServer(game.Workspace.BobClone.HumanoidRootPart)
+				task.wait()
+				end
+				while _G.SlapBob and GloveSlap == "Reaper" do
+				game:GetService("ReplicatedStorage").ReaperHit:FireServer(game.Workspace.BobClone.HumanoidRootPart)
+				task.wait()
+				end
+					end    
+				})
+				
+				SpawnRob = CombatTab:AddToggle({
+					Name = "Auto Ability Rob",
+					Default = false,
+					Callback = function(Value)
+						_G.AutoSpawnRob = Value
+				if game.Players.LocalPlayer.leaderstats.Glove.Value == "rob" then
+				while _G.AutoSpawnRob do
+				game:GetService("ReplicatedStorage").rob:FireServer()
+				wait(15)
+				end
+				elseif Value == true then
+				OrionLib:MakeNotification({Name = "Error",Content = "Get ethernal bob boss fight phase 6.",Image = "rbxassetid://7733658504",Time = 5})
+				wait(0.05)
+				SpawnRob:Set(false)
+				end
+					end    
+				})
+				
+
+local AntiTab = Window:MakeTab({
+	Name = "Anti",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+AntiTab:AddToggle({
+	Name = "Anti Ragdoll",
+	Default = true,
+	Callback = function(Value)
+        _G.AntiRagdoll = Value
+while _G.AntiRagdoll do
+if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+if game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == true then
+repeat task.wait() game.Players.LocalPlayer.Character.Torso.Anchored = true
+until game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == false
+game.Players.LocalPlayer.Character.Torso.Anchored = false
+end
+end
+task.wait()
+end
+	end    
+})
+
+AntiTab:AddToggle({
+	Name = "Anti Ring",
+	Default = false,
+	Callback = function(Value)
+		_G.AntiRing = Value
+while _G.AntiRing do
+if game.Workspace:FindFirstChild("Ring") then
+game.Workspace:FindFirstChild("Ring"):Destroy()
+end
+task.wait()
+end
+	end    
+})
+
+AntiTab:AddToggle({
+	Name = "Anti Void Damage",
+	Default = false,
+	Callback = function(Value)
+game.Workspace["VoidPart"].CanCollide = Value
+if Value == true then
+game.Workspace["VoidPart"].Transparency = 0.5
+else
+game.Workspace["VoidPart"].Transparency = 1
+end
+	end    
+})
+
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
