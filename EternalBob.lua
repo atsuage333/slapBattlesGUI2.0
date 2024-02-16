@@ -20,6 +20,15 @@ local CombatTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+CombatTab:AddDropdown({
+	Name = "Glove Slap Bob",
+	Default = "Killstreak",
+	Options = {"Killstreak", "Reaper"},
+	Callback = function(Value)
+GloveSlap = Value
+	end    
+})
+
 CombatTab:AddToggle({
 	Name = "Auto attack",
 	Default = false,
