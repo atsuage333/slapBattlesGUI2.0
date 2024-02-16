@@ -122,7 +122,7 @@ local AntiTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-CombatTab:AddButton({
+AntiTab:AddButton({
 	Name = "AntiCam Shake",
 	Callback = function()
 		game.Players.LocalPlayer.PlayerScripts.ScreenShake:remove()
