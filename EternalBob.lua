@@ -122,6 +122,13 @@ local AntiTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+CombatTab:AddButton({
+	Name = "AntiCam Shake",
+	Callback = function()
+		game.Players.LocalPlayer.PlayerScripts.ScreenShake:remove()
+  	end    
+})
+
 AntiTab:AddToggle({
 	Name = "Anti Ring",
 	Default = false,
