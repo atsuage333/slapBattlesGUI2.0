@@ -123,24 +123,6 @@ local AntiTab = Window:MakeTab({
 })
 
 AntiTab:AddToggle({
-	Name = "Anti Ragdoll",
-	Default = true,
-	Callback = function(Value)
-        _G.AntiRagdoll = Value
-while _G.AntiRagdoll do
-if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-if game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == true then
-repeat task.wait() game.Players.LocalPlayer.Character.Torso.Anchored = true
-until game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == false
-game.Players.LocalPlayer.Character.Torso.Anchored = false
-end
-end
-task.wait()
-end
-	end    
-})
-
-AntiTab:AddToggle({
 	Name = "Anti Ring",
 	Default = false,
 	Callback = function(Value)
